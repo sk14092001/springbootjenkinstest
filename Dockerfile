@@ -1,10 +1,8 @@
 FROM eclipse-temurin:17
 
-LABEL mentainer="javaquides.net@gmail.com"
+EXPOSE 8081
 
-WORKDIR /app
+ADD target/devops-integration.jar devops-integration.jar
 
-COPY target/jenkins-0.0.1-SNAPSHOT.jar /app/jenkins.jar
-
-ENTRYPOINT ["java", "-jar", "jenkins.jar"]
+ENTRYPOINT ["java", "-jar", "/devops-integration.jar"]
 
